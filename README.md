@@ -14,9 +14,9 @@ https://docs.baronessdev.ru/api/basics
 </repositories>
 
 <dependency>
-	<groupId>com.github.BlackBaroness</groupId>
-	<artifactId>BaronessAuthAPI</artifactId>
-	<version>VERSION</version>
+    <groupId>com.github.BlackBaroness</groupId>
+    <artifactId>BaronessAuthAPI</artifactId>
+    <version>VERSION</version>
 </dependency>
 ```
 
