@@ -10,7 +10,7 @@ https://docs.baronessdev.ru/api/basics
     <repository>
         <id>jitpack.io</id>
         <url>https://jitpack.io</url>
-	</repository>
+    </repository>
 </repositories>
 
 <dependency>
