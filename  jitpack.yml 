@@ -1,3 +1,0 @@
-install:
-  - FILE="-Dfile=jars/api.jar"
-  - mvn install:install-file $FILE -DgroupId=com.github.BlackBaroness -DartifactId=BaronessAuthAPI -Dversion=222 -Dpackaging=jar -DgeneratePom=true

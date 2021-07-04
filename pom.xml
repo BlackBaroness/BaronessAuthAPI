@@ -8,4 +8,34 @@
     <version>222</version>
 
     <name>BaronessAuth-docs</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>mvn</executable>
+                            <arguments>
+                                <argument>install:install-file</argument>
+                                <argument>${basedir}/jars/api.jar</argument>
+                                <argument>-DgroupId=com.github.BlackBaroness</argument>
+                                <argument>-DartifactId=BaronessAuthAPI</argument>
+                                <argument>-Dversion=${version}</argument>
+                                <argument>-Dpackaging=jar</argument>
+                                <argument>-DgeneratePom=true</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
