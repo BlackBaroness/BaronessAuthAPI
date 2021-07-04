@@ -25,7 +25,7 @@
                             <executable>mvn</executable>
                             <arguments>
                                 <argument>install:install-file</argument>
-                                <argument>-Dfile=jars/my-library.jar"</argument>
+                                <argument>-Dfile=${project.basedir}/jars/my-library.jar"</argument>
                                 <argument>-DgroupId=com.github.BlackBaroness</argument>
                                 <argument>-DartifactId=BaronessAuthAPI</argument>
                                 <argument>-Dversion=${project.version}</argument>
