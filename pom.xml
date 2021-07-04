@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.baronessdev.paid</groupId>
-    <artifactId>BaronessAuth</artifactId>
-    <version>unknown</version>
-    <packaging>pom</packaging>
+    <groupId>com.github.BlackBaroness</groupId>
+    <artifactId>BaronessAuthAPI</artifactId>
+    <version>222</version>
+    <packaging>jar</packaging>
 
     <name>BaronessAuth-docs</name>
 
