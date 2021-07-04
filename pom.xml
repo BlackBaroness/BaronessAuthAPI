@@ -25,10 +25,10 @@
                             <executable>mvn</executable>
                             <arguments>
                                 <argument>install:install-file</argument>
-                                <argument>"${basedir}/jars/api.jar"</argument>
+                                <argument>-Dfile=jars/my-library.jar"</argument>
                                 <argument>-DgroupId=com.github.BlackBaroness</argument>
                                 <argument>-DartifactId=BaronessAuthAPI</argument>
-                                <argument>-Dversion=${version}</argument>
+                                <argument>-Dversion=${project.version}</argument>
                                 <argument>-Dpackaging=jar</argument>
                                 <argument>-DgeneratePom=true</argument>
                             </arguments>
