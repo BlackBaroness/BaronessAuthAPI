@@ -1,9 +1,10 @@
 ## API для плагина аутентификации BaronessAuth
 
 Обзор / купить: https://market.baronessdev.ru/shop/baronessauth.1/
+
 JavaDoc: https://blackbaroness.github.io/BaronessAuthAPI/
 
-## Добавление библиотеки в проект
+### Добавление библиотеки в проект
 
 Для скачивания свежего артефакта можно использовать этот скрипт:
 
@@ -11,7 +12,7 @@ JavaDoc: https://blackbaroness.github.io/BaronessAuthAPI/
 #!/bin/bash
 
 rm BaronessAuthAPI.jar
-wget https://github.com/BlackBaroness/BaronessAuthAPI/releases/latest/download/BaronessAuthAPI.jar &&
+wget https://github.com/BlackBaroness/BaronessAuthAPI/releases/latest/download/BaronessAuthAPI.jar
 echo "Latest API jar downloaded"
 
 exit 0;
@@ -29,7 +30,7 @@ exit 0;
 </dependency>
 ```
 
-## Использование ACF
+### Использование ACF
 
 Для добавления субкоманд рекомендуется использование ACF (https://github.com/aikar/commands).
 
@@ -37,9 +38,9 @@ exit 0;
 для любых ACF классов вы должны использовать пакет `ru.baronessdev.paid.auth.lib.acf`, который поставляется в артефакте
 API.
 
-# Примеры взаимодействия (для большего читайте JavaDoc)
+## Примеры взаимодействия (для большего читайте JavaDoc)
 
-## Получение данных игрока
+### Получение данных игрока
 
 ```
 PlayerProfile profile = BaronessAuthAPI.getDataManager().getProfile("nickname");
@@ -51,7 +52,7 @@ if (profile == null) {
 System.out.println("Игрок зарегистрирован с IP адреса " + profile.getFirstIP());
 ```
 
-## Заморожен ли игрок
+### Заморожен ли игрок
 
 ```
 QueryType query = BaronessAuthAPI.getQueryManager().getQuery(player);
