@@ -1,33 +1,62 @@
-API для плагина аутентификации BaronessAuth
+## API для плагина аутентификации BaronessAuth
 
-https://market.baronessdev.ru/shop/baronessauth.1/
-https://docs.baronessdev.ru/api/basics
+Обзор / купить: https://market.baronessdev.ru/shop/baronessauth.1/
+JavaDoc: https://blackbaroness.github.io/BaronessAuthAPI/
 
-## Maven
+## Добавление библиотеки в проект
+
+Для скачивания свежего артефакта можно использовать этот скрипт:
 
 ```
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
+#!/bin/bash
 
+rm BaronessAuthAPI.jar
+wget https://github.com/BlackBaroness/BaronessAuthAPI/releases/latest/download/BaronessAuthAPI.jar &&
+echo "Latest API jar downloaded"
+
+exit 0;
+```
+
+После этого, вы можете добавить библиотеку в проект любым удобным способом. Например, через Maven:
+
+```
 <dependency>
-    <groupId>com.github.BlackBaroness</groupId>
+    <groupId>ru.baronessdev.paid.auth</groupId>
     <artifactId>BaronessAuthAPI</artifactId>
-    <version>VERSION</version>
+    <version>LATEST</version>
+    <scope>system</scope>
+    <systemPath>${project.basedir}/BaronessAuthAPI.jar</systemPath>
 </dependency>
 ```
 
-## Gradle
+## Использование ACF
+
+Для добавления субкоманд рекомендуется использование ACF (https://github.com/aikar/commands).
+
+Имейте в виду, что зависимость ACF в вашем проекте не должна быть использована в качестве компонента субкоманды. То есть
+для любых ACF классов вы должны использовать пакет `ru.baronessdev.paid.auth.lib.acf`, который поставляется в артефакте
+API.
+
+# Примеры взаимодействия (для большего читайте JavaDoc)
+
+## Получение данных игрока
 
 ```
-repositories {
-    maven { url 'https://jitpack.io' }
+PlayerProfile profile = BaronessAuthAPI.getDataManager().getProfile("nickname");
+if (profile == null) {
+    System.out.println("Игрок не зарегистрирован");
+    return;
 }
 
-dependencies {
-    implementation 'com.github.BlackBaroness:BaronessAuthAPI:VERSION'
-}
+System.out.println("Игрок зарегистрирован с IP адреса " + profile.getFirstIP());
+```
+
+## Заморожен ли игрок
+
+```
+QueryType query = BaronessAuthAPI.getQueryManager().getQuery(player);
+System.out.println((query == null) 
+    ? "Игрок не заморожен"
+    : "Игрок заморожен с запросом " + query.name()
+);
 ```
