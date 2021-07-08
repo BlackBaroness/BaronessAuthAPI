@@ -16,7 +16,7 @@ BaronessAuth обладает широким API, что позволяет гл
 
 Для скачивания свежего артефакта можно использовать этот скрипт:
 
-```
+```bash
 #!/bin/bash
 
 rm BaronessAuthAPI.jar
@@ -28,7 +28,7 @@ exit 0;
 
 После этого, вы можете добавить библиотеку в проект любым удобным способом. Например, через Maven:
 
-```
+```xml
 <dependency>
     <groupId>ru.baronessdev.paid.auth</groupId>
     <artifactId>BaronessAuthAPI</artifactId>
@@ -50,7 +50,7 @@ API.
 
 ### Получение данных игрока
 
-```
+```java
 PlayerProfile profile = BaronessAuthAPI.getDataManager().getProfile("nickname");
 if (profile == null) {
     System.out.println("Игрок не зарегистрирован");
@@ -62,7 +62,7 @@ System.out.println("Игрок зарегистрирован с IP адреса
 
 ### Заморожен ли игрок
 
-```
+```java
 QueryType query = BaronessAuthAPI.getQueryManager().getQuery(player);
 System.out.println((query == null) 
     ? "Игрок не заморожен"
