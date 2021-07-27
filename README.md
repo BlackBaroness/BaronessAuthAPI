@@ -14,8 +14,8 @@ BaronessAuth обладает широким API, что позволяет гл
 
 ### Приоритеты слушателей
 
-Все проверки при подключении (AsyncPlayerPreLoginEvent) - LOW Кэширование профиля игрока (AsyncPlayerPreLoginEvent) -
-MONITOR Вход игрока (PlayerJoinEvent) - NORMAL Обработка GUI (InventoryClickEvent) - NORMAL Выход игрока (
+Все проверки при подключении (AsyncPlayerPreLoginEvent) - LOW Вход игрока (PlayerJoinEvent) - NORMAL Обработка GUI (
+InventoryClickEvent) - NORMAL Выход игрока (
 PlayerQuitEvent) - HIGHEST
 
 ### Добавление библиотеки в проект
