@@ -3,4 +3,5 @@ ru.baronessdev.paid.auth.api.enums
 ru.baronessdev.paid.auth.api.events
 ru.baronessdev.paid.auth.api.gui
 ru.baronessdev.paid.auth.api.pojo
+ru.baronessdev.paid.auth.api.provider
 ru.baronessdev.paid.auth.api.subcommands

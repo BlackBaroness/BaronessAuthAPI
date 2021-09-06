@@ -14,9 +14,13 @@ BaronessAuth обладает широким API, что позволяет гл
 
 ### Приоритеты слушателей
 
-Все проверки при подключении (AsyncPlayerPreLoginEvent) - LOW Вход игрока (PlayerJoinEvent) - NORMAL Обработка GUI (
-InventoryClickEvent) - NORMAL Выход игрока (
-PlayerQuitEvent) - HIGHEST
+```
+Все проверки при подключении (AsyncPlayerPreLoginEvent) - LOW 
+Вход игрока (PlayerJoinEvent) - NORMAL 
+Обработка GUI (InventoryClickEvent) - NORMAL 
+Выход игрока (PlayerQuitEvent) - HIGHEST
+Все слушатели заморозки - LOW
+```
 
 ### Добавление библиотеки в проект
 
@@ -48,9 +52,7 @@ exit 0;
 
 Для добавления субкоманд рекомендуется использование ACF (https://github.com/aikar/commands).
 
-Имейте в виду, что зависимость ACF в вашем проекте не должна быть использована в качестве компонента субкоманды. То есть
-для любых ACF классов вы должны использовать пакет `ru.baronessdev.paid.auth.lib.acf`, который поставляется в артефакте
-API.
+Имейте в виду, что вы должны использовать пакет `ru.baronessdev.paid.auth.lib.acf`, сторонние не будут работать.
 
 ## Примеры взаимодействия (для большего читайте JavaDoc)
 
@@ -72,6 +74,6 @@ System.out.println("Игрок зарегистрирован с IP адреса
 QueryType query = BaronessAuthAPI.getQueryManager().getQuery(player);
 System.out.println((query == null) 
     ? "Игрок не заморожен"
-    : "Игрок заморожен с запросом " + query.name()
+    : "Игрок заморожен с запросом " + query.getType().name() + " и провайдером " + query.getProvider().getName()
 );
 ```
